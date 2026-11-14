@@ -22,4 +22,7 @@ for (const file of ['style.css','editor.html','editor.js','editor.css','render.j
 fs.writeFileSync(path.join(out, 'content-data.js'), 'window.SITE_CONTENT = ' + JSON.stringify(data, null, 2).replace(/</g,'\\u003c') + ';\n');
 fs.copyFileSync(path.join(root, 'content.json'), path.join(out, 'content.json'));
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
+if (fs.existsSync(path.join(root, 'assets'))) {
+  fs.cpSync(path.join(root, 'assets'), path.join(out, 'assets'), { recursive: true });
+}
 console.log('Built static website in ' + out);

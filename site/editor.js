@@ -5,7 +5,7 @@
   const clone = x => JSON.parse(JSON.stringify(x));
   let data = clone(original), active = 'profile', previewPage = 'home', timer;
   const groups = {
-    profile: ['基本信息', ['name','tagline','email','github','scholar','website','updated','bio','interests']],
+    profile: ['基本信息', ['name','tagline','email','github','scholar','website','updated','photo','bio','interests']],
     publications: ['已发表论文', ['publications']],
     manuscripts: ['未发表稿件', ['manuscripts']],
     education: ['教育', ['education']],
@@ -13,7 +13,7 @@
     awards: ['奖项', ['awards']],
     skills: ['技能', ['skills']]
   };
-  const labels = {name:'姓名',tagline:'研究方向副标题',email:'电子邮箱',github:'GitHub 链接',scholar:'Google Scholar 链接',website:'网站地址',updated:'更新日期',bio:'个人简介（每项一段）',interests:'研究兴趣',publications:'已发表论文',manuscripts:'未发表稿件',education:'教育经历',experience:'研究经历',awards:'奖项',skills:'技能',title:'标题',authors:'作者',venue:'期刊 / 稿件状态',details:'卷期、页码或补充信息',year:'年份',doi:'DOI',url:'论文链接',note:'备注',abstract:'摘要（可留空）',code:'代码链接（可留空）',institution:'学校',degree:'学位',department:'院系',dates:'时间',courses:'课程',group:'课题组 / 机构',role:'角色',points:'经历描述'};
+  const labels = {photo:'照片路径（上传到 assets/ 目录）',name:'姓名',tagline:'研究方向副标题',email:'电子邮箱',github:'GitHub 链接',scholar:'Google Scholar 链接',website:'网站地址',updated:'更新日期',bio:'个人简介（每项一段）',interests:'研究兴趣',publications:'已发表论文',manuscripts:'未发表稿件',education:'教育经历',experience:'研究经历',awards:'奖项',skills:'技能',title:'标题',authors:'作者',venue:'期刊 / 稿件状态',details:'卷期、页码或补充信息',year:'年份',doi:'DOI',url:'论文链接',note:'备注',abstract:'摘要（可留空）',code:'代码链接（可留空）',institution:'学校',degree:'学位',department:'院系',dates:'时间',courses:'课程',group:'课题组 / 机构',role:'角色',points:'经历描述'};
   const status = document.getElementById('status');
   const prototypes = {publications:clone(original.publications[0]),manuscripts:clone(original.manuscripts[0]),experience:clone(original.experience[0])};
   function valid(x) { return x && typeof x.name === 'string' && Array.isArray(x.bio) && Array.isArray(x.publications) && Array.isArray(x.manuscripts) && Array.isArray(x.experience) && x.education && Array.isArray(x.awards) && Array.isArray(x.interests) && x.skills; }

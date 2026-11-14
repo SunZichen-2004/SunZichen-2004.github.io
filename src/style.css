@@ -5,3 +5,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @page{size:A4;margin:15mm 16mm}
 @media print{body{font-size:10pt;line-height:1.4;color:#000}a{color:#000}main{max-width:none;padding:0}.site-header,.site-footer,.skip-link,.cv-actions,.paper-links{display:none!important}.cv-heading{padding-top:0;display:block}.cv-heading h1{font-size:25pt;margin-bottom:4px}.cv-heading .tagline{font-size:11pt;margin-bottom:6px}.cv-contact{font-size:9pt;margin-bottom:8px}.cv-section{margin-top:15px}.cv-section h2{font-size:12pt;margin-bottom:9px;padding-bottom:4px;break-after:avoid}.cv-section p,.cv-section .paper p,.education-entry p,.experience-entry ul,.simple-list{font-size:9pt}.entry-heading h3,.education-entry h3,.cv-section .paper h3{font-size:10pt}.dates{font-size:8pt!important}.experience-entry{margin-bottom:13px;break-inside:avoid}.experience-entry li{margin-bottom:2px}.affiliation{font-size:8.5pt;margin-bottom:5px}.paper{break-inside:avoid}.cv-section .paper{margin-bottom:12px}.courses{margin-bottom:0}.simple-list{margin-bottom:0}.skill{margin-bottom:4px}.cv-section .paper-number{font-size:8pt;line-height:20px}}
+
+/* Portrait is displayed at its original aspect ratio, without cropping. */
+.profile-photo{display:block;width:100%;height:auto;margin:5px 0 24px;border-radius:3px}.profile-sidebar{min-width:0}
+@media(max-width:760px){.profile-sidebar{display:contents}.profile-photo{grid-row:1;width:160px;margin:0 auto 3px}.bio{grid-row:2}.interests{grid-row:3}}

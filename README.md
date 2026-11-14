@@ -38,6 +38,7 @@
 
 - `bio`：英文简介，每一项是一段。
 - `interests`：研究兴趣。
+- `photo`：个人照片路径；图片文件放在 `assets/` 目录。
 - `publications`：已发表论文，可添加、删除、调整顺序。
 - `manuscripts`：未发表稿件，状态应自行保持最新。
 - `education` / `experience` / `awards` / `skills`：CV 内容。
@@ -80,7 +81,7 @@ node build.mjs
 - 金属有机层综述 DOI：https://doi.org/10.1007/s11426-023-1784-8
 - 2 篇稿件的作者、标题、状态来自提供的 CV，尚未从公开记录独立核实；与已发表论文分栏显示。没有编造预印本、代码链接或引用次数。
 - 版式参考：https://lxzcpro.github.io/ 。页面为重新实现，没有复制该网站的文字、照片或资源。
-- 未提供个人照片，因此采用纯文字版式。
+- 个人照片由本人提供，保存在 `assets/zichen-sun.png`，按原图比例显示。`photo` 字段可修改照片路径。
 
 GitHub Pages 官方指南：https://docs.github.com/en/pages/quickstart
 

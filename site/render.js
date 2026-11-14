@@ -38,10 +38,11 @@ ${data.manuscripts.length ? `<section id="manuscripts" class="${compact ? 'cv-se
     return `<section id="education" class="${full ? 'cv-section' : 'section'}"><h2>Education</h2><div class="education-entry"><div><h3>${e(p.institution)}</h3><p>${e(p.degree)} · ${e(p.department)}</p><p>${e(p.details)}</p></div><p class="dates">${e(p.dates)}</p></div>${full ? `<p class="courses"><strong>Selected courses:</strong> ${e(p.courses)}.</p>` : ''}</section>`;
   }
   function home(data) {
+    const photo = /^assets\/[a-zA-Z0-9_./-]+$/.test(data.photo || "") && !data.photo.includes("..") ? `<img class="profile-photo" src="${e(data.photo)}" alt="Portrait of ${e(data.name)}" width="1069" height="1471" decoding="async">` : "";
     return head(data, `${data.name} | ${data.tagline}`) + nav(data, false) + `<main id="main" class="home">
 <section id="about" class="about"><h1>${e(data.name)}</h1><p class="tagline">${e(data.tagline)}</p>
 <div class="profile-links">${external('mailto:' + data.email, 'Email')}<span aria-hidden="true">/</span>${external(data.scholar, 'Google Scholar')}<span aria-hidden="true">/</span>${external(data.github, 'GitHub')}<span aria-hidden="true">/</span><a href="cv.html">CV</a></div>
-<div class="about-grid"><div class="bio">${data.bio.map(p => `<p>${e(p)}</p>`).join('')}</div><aside class="interests"><h2>Research interests</h2><ul>${data.interests.map(x => `<li>${e(x)}</li>`).join('')}</ul><a class="text-link" href="cv.html#experience">Research experience ↗</a></aside></div></section>
+<div class="about-grid"><div class="bio">${data.bio.map(p => `<p>${e(p)}</p>`).join('')}</div><div class="profile-sidebar">${photo}<aside class="interests"><h2>Research interests</h2><ul>${data.interests.map(x => `<li>${e(x)}</li>`).join('')}</ul><a class="text-link" href="cv.html#experience">Research experience ↗</a></aside></div></div></section>
 ${papers(data)}${education(data)}
 <section id="contact" class="section contact"><h2>Contact</h2><p>The best way to reach me is by email: ${external('mailto:' + data.email, data.email)}.</p></section></main>` + footer(data);
   }

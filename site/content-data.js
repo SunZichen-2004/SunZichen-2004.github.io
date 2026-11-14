@@ -7,8 +7,8 @@ window.SITE_CONTENT = {
   "website": "https://sunzichen-2004.github.io/",
   "updated": "November 2026",
   "bio": [
-    "Hi, I am Zichen Sun, a chemistry graduate of Peking University. I currently work in Gábor Csányi’s group at the University of Cambridge, developing MACE foundation models and ML/MM methods for free-energy perturbation calculations involving metal-binding and covalent drugs.",
-    "My research interests lie at the intersection of machine learning and computational chemistry. I am interested in developing accurate and efficient machine learning interatomic potentials (MLIPs), as well as generative models for molecular dynamics and Boltzmann sampling, including Boltzmann generators.",
+    "Hi, I am Zichen Sun, a chemistry graduate of Peking University. I was named an Outstanding Graduate and received the “Chemistry Star” academic award for graduating undergraduates. I currently work in Gábor Csányi’s group at the University of Cambridge, developing MACE foundation models and ML/MM methods for free-energy perturbation calculations involving metal-binding and covalent drugs.",
+    "My research interests lie at the intersection of machine learning and computational chemistry. I am interested in developing accurate and efficient machine learning interatomic potentials (MLIPs), as well as generative models for molecular dynamics and Boltzmann sampling, including Boltzmann generators. My goal is to develop computational methods and models that are useful in practice. I am also learning about generative modeling, particularly diffusion models and flow matching.",
     "Previously, I worked in Yiqin Gao’s group at Peking University on ensemble-based enhanced sampling with collective-variable biasing (FPT and sFPT). In collaboration with Wen Jun Xie at the University of Florida, I developed mechanical-embedding ML/MM methods to study how single mutations affect enzyme catalysis. I also worked with Jiali Gao at Shenzhen Bay Laboratory on AM1NN, a machine learning–augmented semiempirical quantum chemistry method, and with Weixin Tang at the University of Chicago on ProteinMPNN-based design of TadA scaffolds."
   ],
   "interests": [
@@ -86,7 +86,7 @@ window.SITE_CONTENT = {
     "degree": "Bachelor of Chemistry",
     "department": "College of Chemistry and Molecular Engineering",
     "dates": "September 2022 – July 2026",
-    "details": "GPA: 3.843 / 4.0 · Top 4% (7 / 170)",
+    "details": "Top 4%",
     "courses": "Quantum Chemistry (94.5), Statistical Physics (91), Physical Chemistry (96), Machine Learning (96), Advanced Mathematics (98), Probability and Mathematical Statistics (91)"
   },
   "experience": [
@@ -164,6 +164,8 @@ window.SITE_CONTENT = {
     }
   ],
   "awards": [
+    "Outstanding Graduate (2026)",
+    "“Chemistry Star” Academic Award for Graduating Undergraduates (2026)",
     "BYD Scholarship (2025)",
     "Liao Kaiyuan Scholarship (2024)",
     "China Merchants Securities Scholarship (2023)",
@@ -173,5 +175,6 @@ window.SITE_CONTENT = {
     "Programming": "Python, PyTorch",
     "Tools": "MACE, DeepMD, LAMMPS, DP-GEN, SPONGE, ProteinMPNN, Gaussian, GROMACS, ORCA, VMD, PyMOL, Origin, ChemDraw, MestReNova",
     "Languages and tests": "TOEFL iBT 101 (Writing 28); GRE Verbal 151, Quantitative 170"
-  }
+  },
+  "photo": "assets/zichen-sun.png"
 };
