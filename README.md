@@ -2,6 +2,13 @@
 
 白底、黑色正文、蓝色链接的学术个人主页。普通静态网站，源码和内容归你所有；运行不需要 ChatGPT、Sites、账户登录、数据库、付费服务或外部字体。
 
+- 主页：https://sunzichen-2004.github.io/
+- CV：https://sunzichen-2004.github.io/cv.html
+- 内容编辑器：https://sunzichen-2004.github.io/editor.html
+- 在 GitHub 编辑内容：https://github.com/SunZichen-2004/SunZichen-2004.github.io/edit/main/content.json
+
+日常更新只需修改根目录的 `content.json` 并提交。发布流程会自动生成并部署新版主页和 CV。
+
 ## 先预览
 
 直接在浏览器打开 `site/index.html`。完整 CV 在 `site/cv.html`，可点击 **Print / Save as PDF** 打印或保存当前版本的 PDF。打印时可关闭浏览器的页眉页脚。
