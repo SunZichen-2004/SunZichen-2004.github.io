@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -9,7 +10,12 @@ const data = JSON.parse(fs.readFileSync(path.join(root, 'content.json'), 'utf8')
 for (const key of ['name','email','bio','publications','manuscripts','education','experience','awards','skills']) {
   if (data[key] == null) throw new Error(`Missing content field: ${key}`);
 }
-const ctx = {};
+const assetHash = createHash('sha256').update(JSON.stringify(data));
+for (const file of fs.readdirSync(path.join(root, 'src')).sort()) {
+  assetHash.update(fs.readFileSync(path.join(root, 'src', file)));
+}
+const version = assetHash.digest('hex').slice(0, 12);
+const ctx = { SITE_ASSET_VERSION: version };
 vm.createContext(ctx);
 const renderer = fs.readFileSync(path.join(root, 'src/render.js'), 'utf8');
 vm.runInContext(renderer, ctx);
@@ -19,7 +25,9 @@ fs.writeFileSync(path.join(out, 'cv.html'), ctx.SiteRender.cv(data));
 for (const file of ['style.css','editor.html','editor.js','editor.css','render.js','favicon.svg']) {
   fs.copyFileSync(path.join(root, 'src', file), path.join(out, file));
 }
-fs.writeFileSync(path.join(out, 'content-data.js'), 'window.SITE_CONTENT = ' + JSON.stringify(data, null, 2).replace(/</g,'\\u003c') + ';\n');
+const editorPath = path.join(out, 'editor.html');
+fs.writeFileSync(editorPath, fs.readFileSync(editorPath, 'utf8').replace(/(href|src)="(editor\.css|content-data\.js|render\.js|editor\.js)"/g, `$1="$2?v=${version}"`));
+fs.writeFileSync(path.join(out, 'content-data.js'), 'window.SITE_ASSET_VERSION = ' + JSON.stringify(version) + ';\nwindow.SITE_CONTENT = ' + JSON.stringify(data, null, 2).replace(/</g,'\\u003c') + ';\n');
 fs.copyFileSync(path.join(root, 'content.json'), path.join(out, 'content.json'));
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
 if (fs.existsSync(path.join(root, 'assets'))) {

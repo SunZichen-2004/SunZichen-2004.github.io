@@ -1,3 +1,4 @@
+window.SITE_ASSET_VERSION = "162decd4a20d";
 window.SITE_CONTENT = {
   "name": "Zichen Sun",
   "tagline": "Machine learning for molecular simulation and sampling",

@@ -9,7 +9,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="${e(data.name)} — ${e(data.tagline)}. Research, publications, and curriculum vitae.">
 <meta name="theme-color" content="#ffffff"><title>${e(title)}</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"></head><body>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=${e(root.SITE_ASSET_VERSION || "portrait-2")}"></head><body>
 <a class="skip-link" href="#main">Skip to content</a>`;
   function nav(data, cv) {
     return `<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html">${e(data.name)}</a>
@@ -38,7 +38,7 @@ ${data.manuscripts.length ? `<section id="manuscripts" class="${compact ? 'cv-se
     return `<section id="education" class="${full ? 'cv-section' : 'section'}"><h2>Education</h2><div class="education-entry"><div><h3>${e(p.institution)}</h3><p>${e(p.degree)} · ${e(p.department)}</p><p>${e(p.details)}</p></div><p class="dates">${e(p.dates)}</p></div>${full ? `<p class="courses"><strong>Selected courses:</strong> ${e(p.courses)}.</p>` : ''}</section>`;
   }
   function home(data) {
-    const photo = /^assets\/[a-zA-Z0-9_./-]+$/.test(data.photo || "") && !data.photo.includes("..") ? `<img class="profile-photo" src="${e(data.photo)}" alt="Portrait of ${e(data.name)}" width="1069" height="1471" decoding="async">` : "";
+    const photo = /^assets\/[a-zA-Z0-9_./-]+$/.test(data.photo || "") && !data.photo.includes("..") ? `<img class="profile-photo" src="${e(data.photo)}" alt="Portrait of ${e(data.name)}" width="180" height="248" decoding="async">` : "";
     return head(data, `${data.name} | ${data.tagline}`) + nav(data, false) + `<main id="main" class="home">
 <section id="about" class="about"><h1>${e(data.name)}</h1><p class="tagline">${e(data.tagline)}</p>
 <div class="profile-links">${external('mailto:' + data.email, 'Email')}<span aria-hidden="true">/</span>${external(data.scholar, 'Google Scholar')}<span aria-hidden="true">/</span>${external(data.github, 'GitHub')}<span aria-hidden="true">/</span><a href="cv.html">CV</a></div>
